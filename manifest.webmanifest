@@ -1,0 +1,39 @@
+{
+ "name": "Perpa Rehber – Ürün Arama ve Kat Planı",
+ "short_name": "Perpa Rehber",
+ "lang": "tr",
+ "description": "Perpa Ticaret Merkezi'ndeki firmaların ürünleri ve dükkan yerleri (resmi uygulama değildir).",
+ "start_url": "Perpa%20%C3%9Cr%C3%BCn%20Arama.html",
+ "scope": "./",
+ "display": "standalone",
+ "background_color": "#111317",
+ "theme_color": "#1f3a5f",
+ "icons": [
+  {
+   "src": "uygulama/simge-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "uygulama/simge-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "uygulama/simge-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ],
+ "shortcuts": [
+  {
+   "name": "Kat planı",
+   "url": "Perpa%20Kat%20Plan%C4%B1.html"
+  },
+  {
+   "name": "Ürün ara",
+   "url": "Perpa%20%C3%9Cr%C3%BCn%20Arama.html"
+  }
+ ]
+}
