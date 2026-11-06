@@ -108,7 +108,19 @@ aside{background:var(--panel);border:1px solid var(--line);border-radius:12px;bo
   .dust{grid-template-columns:1fr}
   .sat{grid-template-columns:1fr auto}
   .sat .sb{grid-column:1/-1;justify-content:flex-start}
-  .ust{gap:10px}
+  .ust{gap:8px;padding:10px 12px 8px}
+  header{position:static}
+  .cipler{flex-wrap:nowrap;overflow-x:auto;padding:0 12px 10px;scrollbar-width:none}
+  .cip{flex:0 0 auto}
+  main{padding:12px}
+  .izgara{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .kb{padding:8px 9px 10px}
+  .kad{font-size:12.5px}
+  .fiyat{font-size:15px}
+  .sonust h1{font-size:16px;min-width:0}
+  .perde{padding:0}
+  .detay{border-radius:0;min-height:100vh}
+  .dust .resim{max-height:260px}
 }
 </style>
 </head>
@@ -162,6 +174,8 @@ const sonIki = p => p.son ?? (p.son = " " + p.n.trim().split(" ").filter(w => !/
 const adTemiz = ad => (nrm(ad).startsWith("secili urun ") ? ad.split(/\s+/).slice(2).join(" ") : ad).replace(/\(\d+\)|%\s?\d+\s*indirim|\d[\d.,]*\s*(TL|₺)\b/gi, " ").replace(/\s+/g, " ").trim() || ad;
 const P = L.u.map(([ad0, sn, url, img, fiyat], i) => { const ad = adTemiz(ad0);
   const n = " " + nrm(ad) + " ", fid = siteFirma[sn][0] || null;
+  // sitelerin "yükleniyor" yer tutucu resimleri gerçek resim değil
+  if (/(loading|loader|spinner|lazy|placeholder|blank|preload|no[-_]?image|noimage|default)[^/]*\.(gif|png|svg|jpe?g)/i.test(img)) img = "";
   return { i, ad, sn, url: tam(url, sn), img: tam(img, sn), fiyat, f: fiyatOku(fiyat), n, fid, anahtar: modelKodu(ad) || n.trim() };
 });
 const katOf = fid => { const f = V.F[fid]; if (!f) return ""; const g = String(f[4] || "").trim(); return /^\d+$/.test(g) ? g : (String(f[3] || "").match(/\d+/) || [""])[0]; };
