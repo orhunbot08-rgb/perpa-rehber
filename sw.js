@@ -1,5 +1,5 @@
-// Perpa Rehber: uygulama dosyalarını telefonda saklar (sürüm 202611070037). Yeni sürüm yüklenince eski kayıt silinir.
-const KAYIT = "perpa-rehber-202611070037";
+// Perpa Rehber: uygulama dosyalarını telefonda saklar (sürüm 202611070055). Yeni sürüm yüklenince eski kayıt silinir.
+const KAYIT = "perpa-rehber-202611070055";
 const DOSYALAR = ["./","Perpa%20%C3%9Cr%C3%BCn%20Arama.html","Perpa%20Kat%20Plan%C4%B1.html","manifest.webmanifest","uygulama/simge-192.png","uygulama/simge-512.png","uygulama/simge-180.png","uygulama/simge-64.png"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(KAYIT).then(c => c.addAll(DOSYALAR)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(k => Promise.all(k.filter(x => x !== KAYIT).map(x => caches.delete(x)))).then(() => self.clients.claim())); });
